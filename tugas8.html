@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<title></title>
+<head>
+  <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattern</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <fieldset>
+    <legend class="makan"> </legend>
+  <input type="text"  class="custom-input " id="getvalue" >  <br/>
+   <input type="text"  class="custom-input " id="getvalue2">  <br/>
+
+    <button type="submit" class="btn-primary" onclick="myarray()">
+     submit</button> 
+<p id="p"></p>
+</fieldset>
+
+
+
+<script>
+  
+       function myarray(){
+ let input1value = document.getElementById("getvalue").value;
+ let input2value = document.getElementById("getvalue2").value;
+ let input1toarray=input1value.split(" ");
+ let input2toarray =input2value.split(" ");
+ var a = input1toarray.concat(input2toarray);
+ for(var i=0 ;i<a.lenght;i++){
+  for(varj=1+1;j<a.lenght;++j) {
+    if(a[i] === a[j])
+      a.splice(j--,1);
+  }
+ }
+ document.getElementById("p").innerHTML=(a.sort());
+  } 
+  myarray();       
+</script>
+
+</body>
+
+</html>
